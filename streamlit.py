@@ -10,13 +10,13 @@ class ModelInterface(object):
             You are an AI agent tasked to answer nutrition questions in
             a simple and short way.
         """
-        self.path_to_model = "gemma2_2b_en"#"kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b"
+        self.path_to_model = "kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b"
         self.max_new_tokens = 128
         self.initialize_model()
 
     def initialize_model(self):
         #start_time = time()
-        self.tokenizer = tokenizers.GemmaTokenizer.from_preset("gemma2_2b_en")#"kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b")
+        self.tokenizer = tokenizers.GemmaTokenizer.from_preset("kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b")
         #tok_time = time()
         # print(f"Load tokenizer: {round(tok_time-start_time, 1)} sec.")
         self.model = keras_nlp.models.GemmaCausalLM.from_preset(
