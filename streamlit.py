@@ -28,7 +28,7 @@ class ModelInterface(object):
     def prompt(self, input_text):
         template = "Instruction:\n{instruction}\n\nResponse:\n{response}"
         prompt_text = template.format(
-            instruction="What is a balanced diet?",
+            instruction=input_text,
             response="",
         )
         return prompt_text
@@ -62,6 +62,11 @@ st.write(
 
 # Create a session state variable to store the chat messages. This ensures that the
 # messages persist across reruns.
+if "model_interface" not in st.session_state:
+    st.session_state.model_interface = ModelInterface()
+
+model_interface = st.session_state.model_interface
+
 if "messages" not in st.session_state:
     st.session_state.messages = []
 
@@ -80,7 +85,7 @@ if prompt := st.chat_input("Ask any question"):
         st.markdown(prompt)
 
     # Generate a response using the ModelInterface.
-    model_interface = ModelInterface()
+    
     response_data = model_interface.get_message_response(prompt)
     response = response_data["response"]
 
