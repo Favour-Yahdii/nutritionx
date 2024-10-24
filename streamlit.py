@@ -2,7 +2,7 @@ import streamlit as st
 #import os
 #import keras
 import keras_nlp
-from keras_nlp.tokenizers import Tokenizers
+from keras_nlp import Tokenizers
 
 class ModelInterface(object):
     def __init__(self):
