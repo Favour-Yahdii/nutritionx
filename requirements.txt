@@ -1,4 +1,5 @@
 keras==3.4.1
+keras-hub==0.17.0
 keras_nlp==0.17.0
 tensorflow==2.17.0
 streamlit
