@@ -16,7 +16,7 @@ class ModelInterface(object):
 
     def initialize_model(self):
         #start_time = time()
-        self.tokenizer = tokenizers.GemmaTokenizer.from_preset("kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b")
+        self.tokenizer = tokenizers.GemmaTokenizer.from_preset("gemma2_2b_en")#"kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b")
         #tok_time = time()
         # print(f"Load tokenizer: {round(tok_time-start_time, 1)} sec.")
         self.model = keras_nlp.models.GemmaCausalLM.from_preset(
