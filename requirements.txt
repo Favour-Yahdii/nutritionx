@@ -1,4 +1,2 @@
-tensorflow-text
-tensorflow
+keras
 keras_nlp
-
