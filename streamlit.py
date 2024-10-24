@@ -2,7 +2,7 @@ import streamlit as st
 #import os
 #import keras
 import keras_nlp
-from keras_nlp import Tokenizers
+from keras_nlp import tokenizers
 
 class ModelInterface(object):
     def __init__(self):
@@ -16,7 +16,7 @@ class ModelInterface(object):
 
     def initialize_model(self):
         #start_time = time()
-        self.tokenizer = Tokenizers.GemmaTokenizer.from_preset("kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b")
+        self.tokenizer = tokenizers.GemmaTokenizer.from_preset("kaggle://favouryahdii/gemma-nutritionx/keras/gemma-nutritionx-2b")
         #tok_time = time()
         # print(f"Load tokenizer: {round(tok_time-start_time, 1)} sec.")
         self.model = keras_nlp.models.GemmaCausalLM.from_preset(
