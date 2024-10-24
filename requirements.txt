@@ -1,4 +1,4 @@
 streamlit
 keras
-keras_nlp
+keras_nlp == 0.17.0
 
